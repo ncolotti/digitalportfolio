@@ -3,6 +3,8 @@ body {
     background-color: #000; /* Black background */
     color: #00ff00; /* Terminal-style green text */
     font-family: 'Courier New', Courier, monospace; /* Typewriter-style font */
+    line-height: 1.6;
+    padding-top: 60px; /* Adds padding to start content below the fixed navbar */
 }
 
 /* Header Styling */
@@ -13,12 +15,14 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 50px; /* Explicit height for consistent spacing */
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%; /* Ensure the container fills the header's height */
 }
 
 .headshot {
@@ -64,6 +68,17 @@ nav ul li a {
     margin-left: 10px;
     font-size: 0.9em; /* Reduced font size */
     opacity: 1; /* Keep buttons fully opaque */
+}
+
+/* Skills Section Styling (Restoring Hover Effect) */
+.skill-icon {
+    font-size: 3em; /* Size of skill icons */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    color: #00ff00; /* Terminal-style green */
+}
+
+.skill-icon:hover {
+    transform: scale(1.2); /* Enlarges icon on hover */
 }
 
 /* Footer Styling */
