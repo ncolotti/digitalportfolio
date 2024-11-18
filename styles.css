@@ -1,18 +1,14 @@
-/* styles.css */
-
 /* General Styling */
 body {
     background-color: #000; /* Black background */
     color: #00ff00; /* Terminal-style green text */
     font-family: 'Courier New', Courier, monospace; /* Typewriter-style font */
-    line-height: 1.6;
-    margin: 0;
 }
 
 /* Header Styling */
 header {
-    background-color: #333;
-    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black with 80% opacity */
+    padding: 5px 10px; /* Reduced padding for a thinner nav bar */
     position: fixed;
     width: 100%;
     top: 0;
@@ -27,58 +23,47 @@ header {
 
 .headshot {
     border-radius: 50%;
-    width: 50px;
-    margin-right: 15px;
+    width: 40px; /* Slightly smaller headshot for a more compact look */
+    margin-right: 10px;
 }
 
+.name {
+    font-size: 1.2em;
+    color: #00ff00;
+    margin-right: 20px;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Space between nav items */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px; /* Reduced padding for a more compact appearance */
+    font-size: 0.9em; /* Adjusted font size */
+    opacity: 1; /* Keep nav links fully opaque */
+}
+
+/* Header Links Styling */
 .header-links .button {
     background: #00ff00;
     color: #000;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px 10px; /* Reduced padding */
     border-radius: 5px;
     margin-left: 10px;
-}
-
-/* Section Styling */
-section {
-    padding: 100px 20px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2em;
-}
-
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.skill-icon {
-    font-size: 3em;
-    transition: transform 0.3s ease;
-}
-
-.skill-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Projects Section */
-.project-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.drop-down {
-    background: #00ff00;
-    color: #000;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    font-size: 0.9em; /* Reduced font size */
+    opacity: 1; /* Keep buttons fully opaque */
 }
 
 /* Footer Styling */
