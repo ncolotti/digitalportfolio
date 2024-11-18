@@ -6,8 +6,18 @@
     <title>Nick Colotti - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
+
+    <!-- Intro Section -->
+    <section id="intro">
+        <h2>Welcome to My Website</h2>
+        <p>Explore my work and learn more about me...</p>
+    </section>
+    
+
     <!-- Header Section -->
     <header>
         <div class="header-container">
@@ -29,48 +39,101 @@
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me...</h2>
-        <p>Hi, I'm Nick Colotti, a passionate computer scientist focused on building impactful solutions...</p>
-    </section>
+<!-- About Section -->
+<section id="about">
+    <h2>About Me...</h2>
+    <p>Hi, I'm Nick Colotti, a passionate computer scientist focused on building impactful solutions...</p>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills...</h2>
-        <div class="skills-container">
-            <!-- Python Icon -->
-            <img src="icons/python.svg" alt="Python" class="skill-icon">
-            <!-- Java Icon -->
-            <img src="icons/java.svg" alt="Java" class="skill-icon">
-            <!-- OCaml Icon -->
-            <img src="icons/ocaml.svg" alt="OCaml" class="skill-icon">
-            <!-- AWS Icon -->
-            <img src="icons/aws.svg" alt="AWS" class="skill-icon">
-            <!-- Tableau Icon -->
-            <img src="icons/tableau.svg" alt="Tableau" class="skill-icon">
-            <!-- SQL Icon -->
-            <img src="icons/sql.svg" alt="SQL" class="skill-icon">
-            <!-- C Icon -->
-            <img src="icons/c.svg" alt="C" class="skill-icon">
-        </div>
-    </section>
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills...</h2>
+    <div class="skills-container">
+        <!-- Python Icon -->
+        <i class="devicon-python-plain skill-icon"></i>
+        <!-- Java Icon -->
+        <i class="devicon-java-plain skill-icon"></i>
+        <!-- SQL Icon (Generic database icon) -->
+        <i class="fas fa-database skill-icon"></i>
+        <!-- C Icon -->
+        <i class="devicon-c-plain skill-icon"></i>
+        <!-- AWS Icon -->
+        <i class="devicon-amazonwebservices-plain skill-icon"></i>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects...</h2>
-        <div class="project-container">
-            <div class="project">
-                <h3>Interactive Yahtzee Game</h3>
-                <p>A web-based version of Yahtzee showcasing my skills in collaboration and JavaScript.</p>
-                <button class="drop-down">Learn More</button>
-                <div class="project-details">
-                    <iframe src="interactive_yahtzee.html" title="Interactive Yahtzee Game"></iframe>
-                </div>
+<!-- Projects Section -->
+<section id="projects">
+    <h2>My Projects...</h2>
+    <div class="projects-container">
+
+        <!-- Amazon Internship Project -->
+        <div class="project">
+            <button class="project-button" onclick="toggleDropdown(this)">
+                Amazon Internship Project
+                <span class="arrow">▼</span>
+            </button>
+            <div class="project-description">
+                <p>This project involved developing a tool that improved Amazon's supply chain efficiency by optimizing data flow between warehouses.</p>
             </div>
-            <!-- More projects can be added here -->
         </div>
-    </section>
+
+        <!-- Adoption Share Project -->
+        <div class="project">
+            <button class="project-button" onclick="toggleDropdown(this)">
+                Adoption Share Project
+                <span class="arrow">▼</span>
+            </button>
+            <div class="project-description">
+                <p>In this project, I created a matching algorithm that helped streamline the adoption process, improving speed and efficiency for prospective parents.</p>
+            </div>
+        </div>
+
+        <!-- Yahtzee Project -->
+        <div class="project">
+            <button class="project-button" onclick="toggleDropdown(this)">
+                Yahtzee Project
+                <span class="arrow">▼</span>
+            </button>
+            <div class="project-description">
+                <p>A fun, interactive web-based version of the classic Yahtzee game, built with JavaScript to showcase my skills in frontend game development.</p>
+            </div>
+        </div>
+
+        <!-- Concrete Canoe Project -->
+        <div class="project">
+            <button class="project-button" onclick="toggleDropdown(this)">
+                Cornell Concrete Canoe
+                <span class="arrow">▼</span>
+            </button>
+            <div class="project-description">
+                <p>concrete canoe</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // JavaScript to toggle the dropdown visibility for the description
+    function toggleDropdown(buttonElement) {
+        const projectContainer = buttonElement.parentElement;
+        const description = projectContainer.querySelector('.project-description');
+        const arrow = buttonElement.querySelector('.arrow');
+
+        if (description.style.display === "none" || description.style.display === "") {
+            // Show the description
+            description.style.display = "block";
+            arrow.textContent = "▲"; // Change arrow to indicate collapse
+        } else {
+            // Hide the description
+            description.style.display = "none";
+            arrow.textContent = "▼"; // Change arrow back to indicate expansion
+        }
+    }
+</script>
+
+
 
     <!-- Contact Section -->
     <section id="contact">

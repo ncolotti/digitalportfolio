@@ -10,7 +10,7 @@ body {
 /* Header Styling */
 header {
     background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black with 80% opacity */
-    padding: 5px 10px; /* Reduced padding for a thinner nav bar */
+    padding: 5px 20px; /* Reduced padding for a thinner nav bar */
     position: fixed;
     width: 100%;
     top: 0;
@@ -70,16 +70,123 @@ nav ul li a {
     opacity: 1; /* Keep buttons fully opaque */
 }
 
-/* Skills Section Styling (Restoring Hover Effect) */
+#intro {
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
+
+#about {
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
+
+/*Skills Section Styling (Restoring Hover Effect) */
+#skills {
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
+
+/* Skills Section Styling */
 .skill-icon {
-    width: 60px; /* Size of skill icons */
+    font-size: 3em; /* Adjusted size for icons */
     transition: transform 0.3s ease; /* Smooth transition effect */
+    color: #00ff00; /* Terminal-style green */
 }
 
 .skill-icon:hover {
-    transform: scale(1.4); /* Enlarges icon on hover */
+    transform: scale(1.9); /* Enlarges icon on hover */
 }
 
+/* Skills Container Styling */
+.skills-container {
+    display: flex;
+    gap: 150px; /* Spacing between icons */
+    justify-content: center; /* Centers icons in container */
+    align-items: center; /* Aligns icons vertically in the container */
+    flex-wrap: wrap; /* Wraps to next line if too many icons */
+}
+
+/* Projects Section */
+#projects {
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
+
+/* Project Container */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Project Box (Rounded Box for Each Project) */
+.project {
+    background-color: #857f7fac; /* Black background for each box */
+    border-radius: 20px; /* Rounded corners */
+    padding: 25px;
+    width: 500px;
+    color: #00ff00; /* Terminal-style green text */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden; /* Ensure rounded corners apply when expanded */
+}
+
+/* Project Button */
+.project-button {
+    background-color: transparent;
+    color: #00ff00; /* Terminal-style green text */
+    font-size: 1.2em;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace; /* Match the rest of the font style */
+}
+
+.project-button .arrow {
+    color: #00ff00; /* Set the arrow color to green */
+}
+
+/* Project Description (Initially Hidden) */
+.project-description {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+    color: #00ff00; /* Green text to match the title */
+}
+
+#contact {
+    margin: 20px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
 
 /* Footer Styling */
 footer {
