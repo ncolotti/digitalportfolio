@@ -72,13 +72,12 @@ nav ul li a {
 
 /* Skills Section Styling (Restoring Hover Effect) */
 .skill-icon {
-    font-size: 3em; /* Size of skill icons */
+    width: 60px; /* Size of skill icons */
     transition: transform 0.3s ease; /* Smooth transition effect */
-    color: #00ff00; /* Terminal-style green */
 }
 
 .skill-icon:hover {
-    transform: scale(1.2); /* Enlarges icon on hover */
+    transform: scale(1.4); /* Enlarges icon on hover */
 }
 
 
