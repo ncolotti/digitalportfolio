@@ -3,11 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Nick Colotti - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <img src="headshot.jpg" alt="Nick Colotti Headshot" class="headshot">
+            <h1 class="name">Nick Colotti</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-links">
+                <a href="resume.pdf" class="button">Resume</a>
+                <a href="https://linkedin.com/in/ncolotti" class="button">LinkedIn</a>
+                <a href="mailto:nick@example.com" class="button">Email Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me...</h2>
+        <p>Hi, I'm Nick Colotti, a passionate computer scientist focused on building impactful solutions...</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills...</h2>
+        <div class="skills-container">
+            <i class="fas fa-code skill-icon"></i>
+            <i class="fas fa-database skill-icon"></i>
+            <i class="fas fa-network-wired skill-icon"></i>
+            <!-- Add more icons as needed -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects...</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3>Interactive Yahtzee Game</h3>
+                <p>A web-based version of Yahtzee showcasing my skills in collaboration and JavaScript.</p>
+                <button class="drop-down">Learn More</button>
+                <div class="project-details">
+                    <iframe src="interactive_yahtzee.html" title="Interactive Yahtzee Game"></iframe>
+                </div>
+            </div>
+            <!-- More projects can be added here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me...</h2>
+        <p>If you’d like to work together, feel free to reach out.</p>
+        <a href="mailto:nick@example.com" class="contact-button">Get in Touch</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nick Colotti</p>
+    </footer>
 </body>
 </html>
