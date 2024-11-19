@@ -14,14 +14,14 @@
     <!-- Intro Section -->
     <section id="intro">
         <h2>Welcome to My Website</h2>
-        <p>Explore my work and learn more about me...</p>
+        <p>Explore my work and learn more...</p>
     </section>
     
 
     <!-- Header Section -->
     <header>
         <div class="header-container">
-            <img src="headshot.jpg" alt="Nick Colotti Headshot" class="headshot">
+            <img src="logo.jpg" alt="Nick Colotti Headshot" class="headshot">
             <h1 class="name">Nick Colotti</h1>
             <nav>
                 <ul>
@@ -31,18 +31,26 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-links">
-                <a href="resume.pdf" class="button">Resume</a>
-                <a href="https://linkedin.com/in/ncolotti" class="button">LinkedIn</a>
-                <a href="mailto:nick@example.com" class="button">Email Me</a>
-            </div>
         </div>
     </header>
+
+<!-- Contact Buttons Section -->
+<section id="contact-buttons" style="margin-top: 60px; text-align: center;">
+    <a href="Resume 2025.pdf" class="button" target="_blank">Resume</a>
+    <a href="mailto:njc84@cornell.edu" class="button" target="_blank">
+        <i class="fas fa-envelope"></i> Email Me
+    </a>
+    <a href="https://www.linkedin.com/in/nickcolotti" class="button" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+</section>
+
+
 
 <!-- About Section -->
 <section id="about">
     <h2>About Me...</h2>
-    <p>Hi, I'm Nick Colotti, a passionate computer scientist focused on building impactful solutions...</p>
+    <p>Hi! I'm Nick Colotti, a passionate software engineer and problem-solver. I love creating innovative solutions that make a real impact. Whether it's building interactive games, optimizing data workflows, or contributing to meaningful projects, I'm always excited to learn and grow. I have experience in various programming languages and technologies, and I'm always eager to take on new challenges. Let's create something amazing together!</p>
 </section>
 
 <!-- Skills Section -->
@@ -65,8 +73,10 @@
 <!-- Projects Section -->
 <section id="projects">
     <h2>My Projects...</h2>
-    <div class="projects-container">
-
+    <div class="projects-wrapper" style="display: flex; gap: 40px;">
+        
+    <!-- Projects Container -->
+    <div class="projects-container" style="flex: 1;">
         <!-- Amazon Internship Project -->
         <div class="project">
             <button class="project-button" onclick="toggleDropdown(this)">
@@ -107,28 +117,59 @@
                 <span class="arrow">▼</span>
             </button>
             <div class="project-description">
-                <p>concrete canoe</p>
+                <p>Concrete canoe project details.</p>
             </div>
         </div>
+    </div>
 
+    <!-- Image Container -->
+    <div class="images-container" style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+        <!-- Concrete Canoe Image Section -->
+        <div id="concrete-canoe-images" class="project-images" style="display: none;">
+            <img src="DSC_0395.JPG" alt="Concrete Canoe Image 1" style="max-width: 80%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+            <img src="DSC_0429.JPG" alt="Concrete Canoe Image 2" style="max-width: 80%; height: auto; border-radius: 10px; border: 2px solid white;">
+        </div>
+
+        <!-- Adoption Share Image Section -->
+        <div id="adoption-share-images" class="project-images" style="display: none;">
+            <img src="orie.jpg" alt="Adoption Share Image 1" style="max-width: 90%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 5px solid white;">
+        </div>
     </div>
 </section>
 
 <script>
-    // JavaScript to toggle the dropdown visibility for the description
+    // JavaScript to toggle images visibility for each project
     function toggleDropdown(buttonElement) {
         const projectContainer = buttonElement.parentElement;
         const description = projectContainer.querySelector('.project-description');
         const arrow = buttonElement.querySelector('.arrow');
 
+        // Toggle description visibility
         if (description.style.display === "none" || description.style.display === "") {
-            // Show the description
             description.style.display = "block";
-            arrow.textContent = "▲"; // Change arrow to indicate collapse
+            arrow.textContent = "▲";
         } else {
-            // Hide the description
             description.style.display = "none";
-            arrow.textContent = "▼"; // Change arrow back to indicate expansion
+            arrow.textContent = "▼";
+        }
+
+        // Handle image sections for all projects
+        const imagesSectionCanoe = document.getElementById('concrete-canoe-images');
+        const imagesSectionAdoption = document.getElementById('adoption-share-images');
+
+        // Hide both images sections by default
+        imagesSectionCanoe.style.display = "none";
+        imagesSectionAdoption.style.display = "none";
+
+        // Show the appropriate image section based on the project
+        if (buttonElement.innerText.includes('Concrete Canoe')) {
+            if (description.style.display === "block") {
+                imagesSectionCanoe.style.display = "block";
+            }
+        } else if (buttonElement.innerText.includes('Adoption Share')) {
+            if (description.style.display === "block") {
+                imagesSectionAdoption.style.display = "block";
+            }
         }
     }
 </script>

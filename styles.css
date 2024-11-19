@@ -22,7 +22,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%; /* Ensure the container fills the header's height */
+    padding: 0 75px; /* Keep some padding to prevent content from touching the edge */
+    height: 100%;
 }
 
 .headshot {
@@ -34,16 +35,16 @@ header {
 .name {
     font-size: 1.2em;
     color: #00ff00;
-    margin-right: 20px;
+    margin-right: 1000px;
 }
 
-/* Navigation Styling */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Space between nav items */
+    gap: 10px; /* Space between nav items */
+    justify-content: flex-start;
 }
 
 nav ul li {
@@ -53,9 +54,9 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 5px; /* Reduced padding for a more compact appearance */
-    font-size: 0.9em; /* Adjusted font size */
-    opacity: 1; /* Keep nav links fully opaque */
+    padding: 5px 10px; /* Reduced padding to prevent overflow */
+    font-size: 0.9em;
+    opacity: 1;
 }
 
 /* Header Links Styling */
@@ -63,11 +64,27 @@ nav ul li a {
     background: #00ff00;
     color: #000;
     text-decoration: none;
-    padding: 5px 10px; /* Reduced padding */
+    padding: 0px 10px; /* Reduced padding */
     border-radius: 5px;
     margin-left: 10px;
     font-size: 0.9em; /* Reduced font size */
     opacity: 1; /* Keep buttons fully opaque */
+}
+
+/* Contact Buttons Styling */
+#contact-buttons .button {
+    background: #00ff00;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 15px; /* Adjusted padding for better visibility */
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1em; /* Increased font size for emphasis */
+    opacity: 1; /* Fully opaque */
+    display: inline-block;
+}
+#contact-buttons .button:hover {
+    transform: scale(1.2); /* Makes the button larger when hovered */
 }
 
 #intro {
@@ -143,7 +160,7 @@ h2 {
 .project {
     background-color: #857f7fac; /* Black background for each box */
     border-radius: 20px; /* Rounded corners */
-    padding: 25px;
+    padding: 45px;
     width: 500px;
     color: #00ff00; /* Terminal-style green text */
     display: flex;
@@ -185,7 +202,7 @@ h2 {
 
 h2 {
     text-align: left;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 /* Footer Styling */
