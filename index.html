@@ -44,15 +44,19 @@
 
     <!-- Intro Section -->
     <section id="intro">
-        <h2 id="typing-effect"></h2><span class="cursor"></span>
-        <p>Explore my work and learn more...</p>
+        <div style="display: flex; justify-content: space-between; align-items: top;">
+            <div>
+                <h2 id="typing-effect"></h2><span class="cursor"></span>
+                <p>Explore my work and contact me to learn more...</p>
+            </div>
+            <img src="nick colotti headshot.png" alt="Headshot" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: 2px solid #00ff00;">
+        </div>
     </section>
     
 
     <!-- Header Section -->
     <header>
         <div class="header-container">
-            <img src="logo.jpg" alt="Nick Colotti Headshot" class="headshot">
             <h1 class="name">Nick Colotti</h1>
             <nav>
                 <ul>
@@ -65,7 +69,7 @@
     </header>
 
 <!-- Contact Buttons Section -->
-<section id="contact-buttons" style="margin-top: 60px; text-align: center;">
+<section id="contact-buttons" style="margin-top: -150px; text-align: center;">
     <a href="Resume 2025.pdf" class="button" target="_blank">Resume</a>
     <a href="mailto:njc84@cornell.edu" class="button" target="_blank">
         <i class="fas fa-envelope"></i> Email Me
@@ -114,7 +118,9 @@
                 <span class="arrow">▼</span>
             </button>
             <div class="project-description">
-                <p>This project involved developing a tool that improved Amazon's supply chain efficiency by optimizing data flow between warehouses.</p>
+                <p>During my internship at Amazon in Seattle this summer, I collaborated with an internal services team to develop secure tooling that improved operational efficiency for various teams across Amazon. One of my key contributions was implementing an end-to-end commenting feature in an AWS security service, which allowed for detailed command execution tracking to ensure contingent authorization. Additionally, I created integration tests for the commenting feature, leading to its successful launch into the beta development pipeline. This experience honed my skills in cloud services, secure software development, and cross-functional teamwork in a high-impact environment.</p>
+                
+                <p>Here's what you're seeing: The diagram illustrates the flow of my project, showing how different AWS services were utilized. It details how a specific user command passes from the frontend to CloudWatch Logs, is then processed by Kinesis Data Streams, and subsequently triggers a Lambda function that comments on one or both of two contingent authorization services. This diagram provides a visual representation of the architecture and integration of various AWS components that made the project successful.</p>
             </div>
         </div>
 
@@ -125,7 +131,9 @@
                 <span class="arrow">▼</span>
             </button>
             <div class="project-description">
-                <p>In this project, I created a matching algorithm that helped streamline the adoption process, improving speed and efficiency for prospective parents.</p>
+                <p>The Adoption Share project was part of my work on the Data Science for Social Services Team at Cornell, where I worked last semester. Our team of three partnered with Adoption Share Inc. to analyze the AFCARS dataset, focusing on improving child-parent matching and providing recommendations for the company's expansion into new states. I collaborated closely with company contacts and leveraged Tableau to create impactful data visualizations that highlighted key statistics about children in the U.S. foster care system. The insights we generated helped Adoption Share make data-driven decisions to enhance their services and ultimately improve outcomes for children and prospective parents.</p>
+               
+                <p>Here's what you're seeing: The image shows the poster that my team created for the ORIE research fair at Cornell, which describes our work, findings, and the results we achieved in collaboration with Adoption Share.</p>
             </div>
         </div>
 
@@ -136,7 +144,9 @@
                 <span class="arrow">▼</span>
             </button>
             <div class="project-description">
-                <p>A fun, interactive web-based version of the classic Yahtzee game, built with JavaScript to showcase my skills in frontend game development.</p>
+                <p>My Yahtzee project was a collaborative effort where I worked with a team of four to design, implement, and test a 1,600-line OCaml version of the classic dice game, Yahtzee. We developed a tiered difficulty algorithm to simulate players, making the game more engaging for users. This project challenged us to think critically about game mechanics, AI simulation, and user interaction while working with functional programming in OCaml.</p>
+                
+                <p>Here's what you're seeing: The image shows a visual of the terminal during a playthrough of the game. Future efforts will be made to incorporate the gameplay experience into this website to make it accessible directly from the browser.</p>
             </div>
         </div>
 
@@ -147,13 +157,15 @@
                 <span class="arrow">▼</span>
             </button>
             <div class="project-description">
-                <p>Concrete canoe project details.</p>
+                <p style="margin-bottom: 500px;">Cornell Concrete Canoe is an exciting team that focuses on designing and constructing canoes made out of sustainably engineered concrete. Since October 2021, I have been involved in researching and creating three unique canoes, contributing to every aspect of the construction process. Our team participates in an annual competition where we not only race the canoe but also present our engineering and design process. I have played a key role in training new members in technical construction skills, ensuring adherence to safety regulations, and fostering a collaborative work environment.</p>
+    
+                <p><strong>Here's what you're seeing:</strong> The first image captures me on cast day, applying concrete onto the mold as we build the canoe. Additionally, there's a timelapse video showing our team working together to construct the canoe on cast day—an impressive effort that showcases both teamwork and technical skill in action.</p>
             </div>
         </div>
     </div>
 
     <!-- Image Container -->
-    <div class="images-container" style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+    <div class="images-container" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <!-- Concrete Canoe Image Section -->
     <div id="concrete-canoe-images" class="project-images" style="display: none;">
         <img src="DSC_0395.JPG" alt="Concrete Canoe Image 1" style="max-width: 60%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
@@ -167,7 +179,7 @@
 
         <!-- Adoption Share Image Section -->
         <div id="adoption-share-images" class="project-images" style="display: none;">
-            <img src="orie.jpg" alt="Adoption Share Image 1" style="max-width: 90%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 5px solid white;">
+            <img src="orie.jpg" alt="Adoption Share Image 1" style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 5px solid white;">
         </div>
 
         <!-- Amazon Internship Image Section -->
@@ -248,7 +260,7 @@
             if (index < text.length) {
                 element.textContent += text.charAt(index);
                 index++;
-                setTimeout(type, 10); // Adjust typing speed here (lower value = faster typing)
+                setTimeout(type, 5); // Adjust typing speed here (lower value = faster typing)
             }
         }
 

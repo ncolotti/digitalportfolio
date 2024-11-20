@@ -4,7 +4,16 @@ body {
     color: #00ff00; /* Terminal-style green text */
     font-family: 'Courier New', Courier, monospace; /* Typewriter-style font */
     line-height: 1.6;
-    padding-top: 60px; /* Adds padding to start content below the fixed navbar */
+    padding-top: 50px; /* Adds padding to start content below the fixed navbar */
+}
+
+body {
+    margin: 0; /* Remove default body margin */
+    box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+html {
+    scroll-padding-top: 60px; /* Adjust this value to match or exceed the height of the navbar */
 }
 
 /* Header Styling */
@@ -66,7 +75,7 @@ nav ul li a {
     text-decoration: none;
     padding: 0px 10px; /* Reduced padding */
     border-radius: 5px;
-    margin-left: 10px;
+    margin: 10px;
     font-size: 0.9em; /* Reduced font size */
     opacity: 1; /* Keep buttons fully opaque */
 }
