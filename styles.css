@@ -172,7 +172,7 @@ h2 {
 /* Project Button */
 .project-button {
     background-color: transparent;
-    color: #00ff00; /* Terminal-style green text */
+    color: #ffffff; /* Terminal-style green text */
     font-size: 1.2em;
     border: none;
     padding: 10px;
@@ -193,7 +193,7 @@ h2 {
 .project-description {
     display: none; /* Initially hidden */
     margin-top: 10px;
-    color: #00ff00; /* Green text to match the title */
+    color: #ffffff; /* Green text to match the title */
 }
 
 #contact {

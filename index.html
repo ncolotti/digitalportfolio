@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Colotti - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nick Colotti - Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+        <style>
+            #typing-effect {
+                font-family: 'Courier New', Courier, monospace;
+                color: #00ff00;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline;
+            }
+    
+            .cursor {
+                display: inline-block;
+                width: 2px;
+                height: 2em;
+                background-color: #00ff00;
+                animation: blink 1s steps(1) infinite;
+                vertical-align: 0%;
+                margin-top: -0.1em; /* Adjust this value to fine-tune the cursor's position */
+            }
+    
+            @keyframes blink {
+                0%, 50% {
+                    opacity: 1;
+                }
+                50%, 100% {
+                    opacity: 0;
+                }
+            }
+            #about p {
+                color: white;}
+            #intro p {
+                color: white;}
+        </style>
+    </head>
 <body>
 
     <!-- Intro Section -->
     <section id="intro">
-        <h2>Welcome to My Website</h2>
+        <h2 id="typing-effect"></h2><span class="cursor"></span>
         <p>Explore my work and learn more...</p>
     </section>
     
@@ -28,7 +59,6 @@
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -125,20 +155,43 @@
     <!-- Image Container -->
     <div class="images-container" style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
         <!-- Concrete Canoe Image Section -->
-        <div id="concrete-canoe-images" class="project-images" style="display: none;">
-            <img src="DSC_0395.JPG" alt="Concrete Canoe Image 1" style="max-width: 80%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
-            <img src="DSC_0429.JPG" alt="Concrete Canoe Image 2" style="max-width: 80%; height: auto; border-radius: 10px; border: 2px solid white;">
-        </div>
+    <div id="concrete-canoe-images" class="project-images" style="display: none;">
+        <img src="DSC_0395.JPG" alt="Concrete Canoe Image 1" style="max-width: 60%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+        
+        <!-- Concrete Canoe Video -->
+        <video controls style="max-width: 60%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+            <source src="source.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
         <!-- Adoption Share Image Section -->
         <div id="adoption-share-images" class="project-images" style="display: none;">
             <img src="orie.jpg" alt="Adoption Share Image 1" style="max-width: 90%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 5px solid white;">
         </div>
+
+        <!-- Amazon Internship Image Section -->
+        <div id="amazon-internship-images" class="project-images" style="display: none;">
+            <img src="Amazon Design Diagram.jpg" alt="Amazon Internship Image 1" style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+        </div>
+
+        <!-- Yahtzee Image Section -->
+        <div id="yahtzee-images" class="project-images" style="display: none;">
+            <img src="yah.jpeg" alt="Yahtzee Game Image 1" style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+        </div>
     </div>
 </section>
 
+<!-- Video Section for Concrete Canoe -->
+<div id="concrete-canoe-video" class="project-video" style="display: none;">
+    <video controls style="max-width: 60%; height: auto; margin-bottom: 10px; border-radius: 10px; border: 2px solid white;">
+        <source src="source.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
 <script>
-    // JavaScript to toggle images visibility for each project
+    // JavaScript to toggle images visibility and add typing effect for project descriptions
     function toggleDropdown(buttonElement) {
         const projectContainer = buttonElement.parentElement;
         const description = projectContainer.querySelector('.project-description');
@@ -148,6 +201,7 @@
         if (description.style.display === "none" || description.style.display === "") {
             description.style.display = "block";
             arrow.textContent = "▲";
+            typeText(description, description.textContent.trim()); // Trigger typing effect
         } else {
             description.style.display = "none";
             arrow.textContent = "▼";
@@ -156,10 +210,14 @@
         // Handle image sections for all projects
         const imagesSectionCanoe = document.getElementById('concrete-canoe-images');
         const imagesSectionAdoption = document.getElementById('adoption-share-images');
+        const imagesSectionAmazon = document.getElementById('amazon-internship-images');
+        const imagesSectionYahtzee = document.getElementById('yahtzee-images');
 
-        // Hide both images sections by default
+        // Hide all images sections by default
         imagesSectionCanoe.style.display = "none";
         imagesSectionAdoption.style.display = "none";
+        imagesSectionAmazon.style.display = "none";
+        imagesSectionYahtzee.style.display = "none";
 
         // Show the appropriate image section based on the project
         if (buttonElement.innerText.includes('Concrete Canoe')) {
@@ -170,18 +228,52 @@
             if (description.style.display === "block") {
                 imagesSectionAdoption.style.display = "block";
             }
+        } else if (buttonElement.innerText.includes('Amazon Internship')) {
+            if (description.style.display === "block") {
+                imagesSectionAmazon.style.display = "block";
+            }
+        } else if (buttonElement.innerText.includes('Yahtzee')) {
+            if (description.style.display === "block") {
+                imagesSectionYahtzee.style.display = "block";
+            }
         }
+    }
+
+    // Typing effect function
+    function typeText(element, text) {
+        element.textContent = ""; // Clear the element's text
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 10); // Adjust typing speed here (lower value = faster typing)
+            }
+        }
+
+        type();
     }
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const text = 'Welcome to My Website!';
+        const typingElement = document.getElementById('typing-effect');
+        let index = 0;
 
+        function typeText() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 150);
+            }
+        }
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me...</h2>
-        <p>If you’d like to work together, feel free to reach out.</p>
-        <a href="mailto:nick@example.com" class="contact-button">Get in Touch</a>
-    </section>
+        typeText();
+    });
+</script>
+
 
     <footer>
         <p>&copy; 2024 Nick Colotti</p>
